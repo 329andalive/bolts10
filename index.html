@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bolts10 — Automated SMS Job Notifications for Trade Businesses</title>
+  <meta name="description" content="Bolts10 sends automated SMS job notifications to customers on behalf of plumbing, HVAC, septic, and excavation businesses. No app required. No missed appointments." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════════ -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__logo" aria-label="Bolts10 Home">
+      <span class="navbar__logo-bolt" aria-hidden="true">⚡</span>
+      Bolts10
+    </a>
+
+    <ul class="navbar__links">
+      <li><a href="/#how-it-works">How It Works</a></li>
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#who-its-for">Who It's For</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+
+    <div class="navbar__cta">
+      <a href="/contact/" class="btn btn-primary">Request a Demo</a>
+    </div>
+
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="container">
+    <div class="navbar__mobile-menu" id="mobile-menu" role="menu">
+      <a href="/#how-it-works" role="menuitem">How It Works</a>
+      <a href="/#features" role="menuitem">Features</a>
+      <a href="/#who-its-for" role="menuitem">Who It's For</a>
+      <a href="/contact/" role="menuitem">Contact</a>
+      <a href="/contact/" role="menuitem" style="color: var(--amber); font-weight: 700;">Request a Demo →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container">
+    <div class="badge">Built for Trades</div>
+    <h1 id="hero-heading">Your customers know you're coming.<br>Before you even knock.</h1>
+    <p class="hero__sub">
+      Bolts10 sends automated SMS notifications to your customers the moment a job is scheduled,
+      dispatched, or completed — no app, no setup, no hassle.
+    </p>
+    <div class="hero__actions">
+      <a href="/contact/" class="btn btn-primary">Request a Demo</a>
+      <a href="/#how-it-works" class="btn btn-outline">See How It Works</a>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-arrow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SOCIAL PROOF BAR
+════════════════════════════════════════════════════════════ -->
+<div style="background: var(--amber); padding: .85rem 0;">
+  <div class="container text-center" style="color: var(--navy-dark); font-weight: 600; font-size: .95rem;">
+    Trusted by plumbers, HVAC techs, septic servicers, and excavators across rural America.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════════════════════════ -->
+<section class="section" id="how-it-works" aria-labelledby="how-heading">
+  <div class="container text-center">
+    <div class="badge">Simple by Design</div>
+    <h2 id="how-heading">Three steps. Zero learning curve.</h2>
+    <div class="divider"></div>
+    <p style="max-width: 600px; margin-inline: auto; color: var(--slate-500);">
+      Bolts10 plugs into how you already run your jobs. Your crew texts job updates the same way
+      they always have — Bolts10 handles the rest.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step__number">1</div>
+        <h3>You Book the Job</h3>
+        <p>Schedule a job via your dispatch system or just text in the job details. Bolts10 captures everything automatically.</p>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <h3>Bolts10 Notifies Your Customer</h3>
+        <p>Your customer gets a professional SMS — confirmed appointment time, tech name, and what to expect. Automatically.</p>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <h3>Job Done, Customer Happy</h3>
+        <p>On completion, a follow-up SMS goes out — receipt, review request, or whatever fits your workflow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FEATURES
+════════════════════════════════════════════════════════════ -->
+<section class="section section--alt" id="features" aria-labelledby="features-heading">
+  <div class="container">
+    <div class="text-center">
+      <div class="badge">Platform Features</div>
+      <h2 id="features-heading">Everything your back office needs.</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <span class="feature-card__icon" aria-hidden="true">📱</span>
+        <h3>SMS-First, Always</h3>
+        <p>Customers get plain text messages that work on every phone — no app download, no email, no portal. Rural-proof.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-card__icon" aria-hidden="true">🏢</span>
+        <h3>Multi-Tenant Platform</h3>
+        <p>Each trade business gets their own isolated environment, their own phone number, and their own customer data.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-card__icon" aria-hidden="true">🤖</span>
+        <h3>AI-Powered Notifications</h3>
+        <p>Messages sound like you wrote them — not a robot. Bolts10 learns your business voice and your pricing language.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-card__icon" aria-hidden="true">📋</span>
+        <h3>Proposals & Invoices</h3>
+        <p>Generate professional estimates from a quick job description. Send invoices when the job wraps up. All via SMS.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-card__icon" aria-hidden="true">⭐</span>
+        <h3>Automatic Review Requests</h3>
+        <p>After every completed job, Bolts10 follows up asking for a Google review — at the exact right moment.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-card__icon" aria-hidden="true">🔒</span>
+        <h3>Compliant by Default</h3>
+        <p>STOP opt-out honored instantly. All mobile data handled per CTIA guidelines. Your customers' trust, protected.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-card__icon" aria-hidden="true">📅</span>
+        <h3>Scheduling & Dispatch</h3>
+        <p>Text in a job and Bolts10 schedules it, confirms with the customer, and keeps your crew on track.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-card__icon" aria-hidden="true">📊</span>
+        <h3>Job History Dashboard</h3>
+        <p>See every job, every message, every invoice — organized by day. Know what's done and what's pending at a glance.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-card__icon" aria-hidden="true">🔧</span>
+        <h3>Zero Hardware Required</h3>
+        <p>Your crew already has a phone. That's all they need. No tablets, no scanners, no new equipment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHO IT'S FOR
+════════════════════════════════════════════════════════════ -->
+<section class="section" id="who-its-for" aria-labelledby="who-heading">
+  <div class="container text-center">
+    <div class="badge">Built for Trades</div>
+    <h2 id="who-heading">If you do service work, Bolts10 is for you.</h2>
+    <div class="divider"></div>
+    <p style="max-width: 620px; margin-inline: auto; color: var(--slate-500); margin-bottom: 2rem;">
+      Bolts10 was designed from the ground up for small trade service businesses. If your crew is
+      in the field and your customers are waiting for updates — this is what you need.
+    </p>
+
+    <div class="verticals">
+      <div class="vertical-tag"><span aria-hidden="true">🪠</span> Plumbing</div>
+      <div class="vertical-tag"><span aria-hidden="true">❄️</span> HVAC</div>
+      <div class="vertical-tag"><span aria-hidden="true">🚰</span> Sewer & Drain</div>
+      <div class="vertical-tag"><span aria-hidden="true">💧</span> Septic Service</div>
+      <div class="vertical-tag"><span aria-hidden="true">🏗️</span> Excavation</div>
+      <div class="vertical-tag"><span aria-hidden="true">⚡</span> Electrical</div>
+      <div class="vertical-tag"><span aria-hidden="true">🔥</span> Heating & Oil</div>
+      <div class="vertical-tag"><span aria-hidden="true">🏠</span> Home Services</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════════════════════════ -->
+<section class="section section--alt" aria-labelledby="testimonials-heading">
+  <div class="container text-center">
+    <div class="badge">From the Field</div>
+    <h2 id="testimonials-heading">What trade owners are saying.</h2>
+    <div class="divider"></div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p class="testimonial__quote">"I used to get calls all day asking 'when are you coming?' Now my customers know before they even have to ask. It changed my whole week."</p>
+        <div class="testimonial__author">Mike D.</div>
+        <div class="testimonial__role">Owner, rural septic service — Maine</div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial__quote">"We went from chasing unpaid invoices to getting paid the same day. The follow-up texts do it automatically. I don't have to think about it."</p>
+        <div class="testimonial__author">Rachel T.</div>
+        <div class="testimonial__role">Office Manager, HVAC — Tennessee</div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial__quote">"My Google reviews doubled in two months. The system asks at exactly the right time — right after the job, while they're still happy."</p>
+        <div class="testimonial__author">Dan C.</div>
+        <div class="testimonial__role">Owner, excavation & grading — Ohio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     BOOKING WIDGET EMBED (placeholder)
+════════════════════════════════════════════════════════════ -->
+<section class="section" id="get-started" aria-labelledby="widget-heading">
+  <div class="container">
+    <div class="text-center">
+      <div class="badge">Get Started</div>
+      <h2 id="widget-heading">Ready to put your back office on autopilot?</h2>
+      <div class="divider"></div>
+      <p style="max-width: 580px; margin-inline: auto; color: var(--slate-500);">
+        Tell us about your business and we'll get you set up. Takes about 10 minutes.
+      </p>
+    </div>
+
+    <!-- ╔══════════════════════════════════════════════════════╗
+         ║  BOOKING WIDGET EMBED — replace with actual embed  ║
+         ╚══════════════════════════════════════════════════════╝ -->
+    <div class="widget-embed" id="booking-widget">
+      <div class="widget-embed__label">Client Onboarding Widget</div>
+      <div class="widget-embed__placeholder">
+        <p style="margin-bottom: 1.5rem; color: var(--slate-500);">
+          The Bolts10 onboarding widget will appear here.<br>
+          Replace this block with your embed code when ready.
+        </p>
+        <a href="/contact/" class="btn btn-navy">Contact Us to Get Started</a>
+      </div>
+      <!-- EMBED PLACEHOLDER — insert iframe or script tag here:
+      <iframe src="https://onboarding.bolts10.com/embed"
+              width="100%" height="600" frameborder="0"
+              title="Bolts10 Onboarding"></iframe>
+      -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA BANNER
+════════════════════════════════════════════════════════════ -->
+<section class="cta-banner" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 id="cta-heading">Stop losing jobs to missed communication.</h2>
+    <p>Your competitors are still playing phone tag. You don't have to.</p>
+    <a href="/contact/" class="btn btn-primary">Request a Free Demo</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo">
+          <span class="footer__logo-bolt" aria-hidden="true">⚡</span>
+          Bolts10
+        </a>
+        <p class="footer__tagline">Automated SMS job notifications for small trade service businesses. Built for the field, not the office.</p>
+        <p class="footer__compliance">
+          Bolts10 is a multi-tenant SaaS platform. SMS notifications are transactional only.
+          Mobile numbers are never sold or shared. Reply STOP to any message to opt out.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="/#how-it-works">How It Works</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#who-its-for">Who It's For</a></li>
+          <li><a href="/contact/">Request a Demo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
+          <li><a href="/contact/">Support</a></li>
+          <li><a href="mailto:support@bolts10.com">support@bolts10.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2025 Bolts10. All rights reserved.</p>
+      <p>
+        <a href="/privacy-policy/" style="color: rgba(255,255,255,.5);">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="/terms-and-conditions/" style="color: rgba(255,255,255,.5);">Terms &amp; Conditions</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

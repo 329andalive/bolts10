@@ -1,0 +1,22 @@
+# Netlify configuration for Bolts10 static site
+# Clean URLs are handled automatically by directory/index.html structure
+
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/privacy"
+  to   = "/privacy-policy/"
+  status = 301
+
+[[redirects]]
+  from = "/terms"
+  to   = "/terms-and-conditions/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

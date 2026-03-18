@@ -1,0 +1,3 @@
+# Cloudflare Pages redirect rules
+/privacy        /privacy-policy/       301
+/terms          /terms-and-conditions/ 301

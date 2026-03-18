@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Support — Bolts10</title>
+  <meta name="description" content="Get in touch with Bolts10. Support for trade business clients and end customers." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__logo" aria-label="Bolts10 Home">
+      <span class="navbar__logo-bolt" aria-hidden="true">⚡</span>
+      Bolts10
+    </a>
+    <ul class="navbar__links">
+      <li><a href="/#how-it-works">How It Works</a></li>
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#who-its-for">Who It's For</a></li>
+      <li><a href="/contact/" aria-current="page">Contact</a></li>
+    </ul>
+    <div class="navbar__cta">
+      <a href="/contact/" class="btn btn-primary">Request a Demo</a>
+    </div>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="container">
+    <div class="navbar__mobile-menu" id="mobile-menu" role="menu">
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#features">Features</a>
+      <a href="/#who-its-for">Who It's For</a>
+      <a href="/contact/" style="color: var(--amber); font-weight: 700;">Contact →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="legal-header">
+  <div class="container">
+    <div class="badge">Get in Touch</div>
+    <h1>Contact &amp; Support</h1>
+    <p>We're here for trade business owners and end customers alike. We'll get back to you fast.</p>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Contact cards -->
+      <div>
+        <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">How can we help?</h2>
+
+        <div class="contact-card">
+          <h3>🏢 Trade Business Owners &amp; Clients</h3>
+          <p>
+            If you're a plumber, HVAC company, septic servicer, or other trade business interested
+            in using Bolts10 — or if you already have an account and need help — reach out here.
+          </p>
+          <div class="contact-card__email">
+            <a href="mailto:support@bolts10.com">support@bolts10.com</a>
+          </div>
+          <p style="margin-top: .5rem; font-size: .85rem; color: var(--slate-500);">
+            We respond within 1 business day.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>📱 End Customers — Got a Text From Us?</h3>
+          <p>
+            If you received an SMS notification through a trade business that uses Bolts10 and
+            have questions or want to stop receiving messages, we can help immediately.
+          </p>
+          <ul style="padding-left: 1.25rem; color: var(--slate-500); font-size: .95rem; margin-bottom: 1rem;">
+            <li><strong>To stop messages:</strong> Reply <strong>STOP</strong> to the text you received — takes effect immediately.</li>
+            <li><strong>To reach us directly:</strong> Email <a href="mailto:support@bolts10.com">support@bolts10.com</a> with your number.</li>
+          </ul>
+        </div>
+
+        <div class="contact-card">
+          <h3>⚡ Request a Demo</h3>
+          <p>
+            Want to see Bolts10 in action before committing? Fill out the form and we'll walk you
+            through a live demo tailored to your trade.
+          </p>
+          <div class="contact-card__email">
+            <a href="mailto:demo@bolts10.com">demo@bolts10.com</a>
+          </div>
+        </div>
+
+        <div class="contact-card" style="background: var(--navy); border-color: var(--navy);">
+          <h3 style="color: var(--white);">⏱ Response Times</h3>
+          <ul style="padding-left: 1.25rem; color: rgba(255,255,255,.75); font-size: .9rem;">
+            <li>STOP opt-out requests: <strong style="color: var(--amber);">Immediate</strong></li>
+            <li>Support emails: <strong style="color: var(--amber);">Within 1 business day</strong></li>
+            <li>Demo requests: <strong style="color: var(--amber);">Within 24 hours</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact form -->
+      <div>
+        <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Send us a message</h2>
+
+        <div
+          id="form-success"
+          style="display:none; background:#f0fdf4; border:1px solid #86efac; border-radius:var(--radius); padding:1.25rem 1.5rem; margin-bottom:1.5rem; color:#166534;"
+        >
+          <strong>Message sent!</strong> Your email client should have opened. We'll get back to you shortly.
+        </div>
+
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="type">I am a…</label>
+            <select id="type" name="type">
+              <option value="trade-business">Trade business owner / client</option>
+              <option value="demo-request">Interested in a demo</option>
+              <option value="end-customer">End customer (got a text from a trade business)</option>
+              <option value="opt-out">I want to stop receiving texts</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Your Name <span aria-hidden="true" style="color:var(--amber)">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required placeholder="Jane Smith" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span aria-hidden="true" style="color:var(--amber)">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="jane@yourcompany.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="business">Business Name <span style="font-weight:400; color:var(--slate-500)">(optional)</span></label>
+            <input type="text" id="business" name="business" placeholder="Smith Plumbing LLC" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number <span style="font-weight:400; color:var(--slate-500)">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+1 (207) 555-0100" />
+            <div class="form-note">If you're requesting an opt-out, include the mobile number you'd like removed.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span aria-hidden="true" style="color:var(--amber)">*</span></label>
+            <textarea id="message" name="message" required placeholder="Tell us what you need..."></textarea>
+          </div>
+
+          <div class="form-group" style="margin-bottom:0;">
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; font-size:1.05rem; padding:1rem;">
+              Send Message →
+            </button>
+            <div class="form-note" style="text-align:center; margin-top:.75rem;">
+              Your email client will open to send. No data leaves your browser otherwise.
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- FAQ -->
+    <div style="margin-top: 5rem;">
+      <div class="text-center" style="margin-bottom: 2.5rem;">
+        <div class="badge">Quick Answers</div>
+        <h2>Frequently Asked Questions</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="features" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="feature-card">
+          <h3>How do I stop receiving text messages?</h3>
+          <p>
+            Reply <strong>STOP</strong> to any text you received. Your number will be removed
+            immediately — no login required. You can also email us at
+            <a href="mailto:support@bolts10.com">support@bolts10.com</a>.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Who sent me a text?</h3>
+          <p>
+            Texts sent through Bolts10 come from a phone number registered to a specific trade
+            business (plumber, HVAC company, septic service, etc.). The business name is included
+            in the message. Reply STOP to stop their messages.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>How do I sign my trade business up?</h3>
+          <p>
+            Fill out the contact form above or email <a href="mailto:support@bolts10.com">support@bolts10.com</a>.
+            We'll schedule a demo and walk you through setup. Takes about 10 minutes.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Is there an app I need to download?</h3>
+          <p>
+            No. Bolts10 is entirely SMS-based. Your crew texts job updates from any phone.
+            Your customers receive plain text messages. No apps. No portals. No passwords.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>What trades does Bolts10 support?</h3>
+          <p>
+            Any field service trade: plumbing, HVAC, septic, sewer & drain, excavation,
+            electrical, heating & oil, and more. If you do service work and drive to customers,
+            Bolts10 can help.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Is my data private?</h3>
+          <p>
+            Yes. We never sell or share customer mobile numbers. All data is isolated per client.
+            See our <a href="/privacy-policy/">Privacy Policy</a> for full details.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 id="cta-heading">Ready to put your back office on autopilot?</h2>
+    <p>It takes 10 minutes to get set up. Your customers will notice the difference today.</p>
+    <a href="mailto:demo@bolts10.com" class="btn btn-primary">Request a Free Demo</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo">
+          <span class="footer__logo-bolt" aria-hidden="true">⚡</span>
+          Bolts10
+        </a>
+        <p class="footer__tagline">Automated SMS job notifications for small trade service businesses. Built for the field, not the office.</p>
+        <p class="footer__compliance">
+          SMS notifications are transactional only. Mobile numbers are never sold or shared.
+          Reply STOP to any message to opt out immediately.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="/#how-it-works">How It Works</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#who-its-for">Who It's For</a></li>
+          <li><a href="/contact/">Request a Demo</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
+          <li><a href="/contact/">Support</a></li>
+          <li><a href="mailto:support@bolts10.com">support@bolts10.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2025 Bolts10. All rights reserved.</p>
+      <p>
+        <a href="/privacy-policy/" style="color: rgba(255,255,255,.5);">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="/terms-and-conditions/" style="color: rgba(255,255,255,.5);">Terms &amp; Conditions</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
