@@ -1,4 +1,4 @@
-# Netlify configuration for Bolts10 static site
+# Netlify configuration for Bolts11 static site
 # Clean URLs are handled automatically by directory/index.html structure
 
 [build]

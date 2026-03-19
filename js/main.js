@@ -1,4 +1,4 @@
-/* Bolts10 — Site JS */
+/* Bolts11 — Site JS */
 
 // Mobile nav toggle
 (function () {
@@ -41,9 +41,9 @@
     }
 
     // Build mailto link as a no-backend fallback
-    const subject  = encodeURIComponent('Bolts10 Contact: ' + type);
+    const subject  = encodeURIComponent('Bolts11 Contact: ' + type);
     const body     = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nType: ' + type + '\n\n' + message);
-    const mailto   = 'mailto:support@bolts10.com?subject=' + subject + '&body=' + body;
+    const mailto   = 'mailto:support@bolts11.com?subject=' + subject + '&body=' + body;
     window.location.href = mailto;
 
     if (successMsg) {

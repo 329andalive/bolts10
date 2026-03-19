@@ -1,6 +1,6 @@
-# Bolts10 — Marketing & Compliance Website
+# Bolts11 — Marketing & Compliance Website
 
-Static marketing site for bolts10.com — automated SMS job notifications for trade service businesses.
+Static marketing site for bolts11.com — automated SMS job notifications for trade service businesses.
 
 ## Pages
 
@@ -55,7 +55,7 @@ Your repo must be on GitHub (or GitLab) for Cloudflare Pages to connect to it.
 ```bash
 # From the agent_work_flow repo root:
 git add bolts10-site/
-git commit -m "Add Bolts10 marketing site"
+git commit -m "Add Bolts11 marketing site"
 git push origin main
 ```
 
@@ -101,16 +101,16 @@ x-content-type-options: nosniff
 referrer-policy: strict-origin-when-cross-origin
 ```
 
-#### Step 4 — Add custom domain (bolts10.com)
+#### Step 4 — Add custom domain (bolts11.com)
 
-Because bolts10.com's DNS is already on Cloudflare, this is a one-click operation:
+Because bolts11.com's DNS is already on Cloudflare, this is a one-click operation:
 
 1. In your Pages project → **Custom domains** tab → **Set up a custom domain**
-2. Enter `bolts10.com` → **Continue**
+2. Enter `bolts11.com` → **Continue**
 3. Cloudflare detects the domain is on your account and automatically creates the DNS record.
    Click **Activate domain**. No manual DNS editing needed.
-4. To also cover `www.bolts10.com`, repeat: enter `www.bolts10.com` → **Continue** →
-   **Activate domain**. Cloudflare creates a CNAME for www → bolts10.com.
+4. To also cover `www.bolts11.com`, repeat: enter `www.bolts11.com` → **Continue** →
+   **Activate domain**. Cloudflare creates a CNAME for www → bolts11.com.
 
 SSL is provisioned automatically. The domain is live within 1–2 minutes.
 
@@ -118,7 +118,7 @@ SSL is provisioned automatically. The domain is live within 1–2 minutes.
 
 These are account-level settings, not Pages-specific. Go to:
 
-**Cloudflare Dashboard → bolts10.com → SSL/TLS**
+**Cloudflare Dashboard → bolts11.com → SSL/TLS**
 
 1. **Encryption mode** → set to **Full (strict)**
    - This encrypts traffic between Cloudflare and your origin. Pages is the origin here,
@@ -169,9 +169,9 @@ After deploy, in the Vercel dashboard:
 #### Step 3 — Add custom domain
 
 1. Vercel project → **Settings** → **Domains**
-2. Enter `bolts10.com` → **Add**
+2. Enter `bolts11.com` → **Add**
 3. Vercel shows you two DNS options:
-   - **Recommended (Nameservers):** point bolts10.com nameservers to Vercel's NS. This hands DNS control to Vercel.
+   - **Recommended (Nameservers):** point bolts11.com nameservers to Vercel's NS. This hands DNS control to Vercel.
    - **CNAME/A record:** keep DNS on Cloudflare, add these records:
 
      | Type | Name | Value |
@@ -179,7 +179,7 @@ After deploy, in the Vercel dashboard:
      | A | `@` | `76.76.21.21` |
      | CNAME | `www` | `cname.vercel-dns.com` |
 
-4. Also add `www.bolts10.com` as a second domain in Vercel and set it to redirect to `bolts10.com`.
+4. Also add `www.bolts11.com` as a second domain in Vercel and set it to redirect to `bolts11.com`.
 
 SSL is provisioned automatically via Let's Encrypt within a few minutes.
 
@@ -213,7 +213,7 @@ and redirect aliases.
 #### Step 3 — Add custom domain
 
 1. Netlify project → **Domain management** → **Add a domain**
-2. Enter `bolts10.com` → **Verify** → **Add domain**
+2. Enter `bolts11.com` → **Verify** → **Add domain**
 3. Netlify shows required DNS records. If DNS is on Cloudflare, add:
 
    | Type | Name | Value |
@@ -221,13 +221,13 @@ and redirect aliases.
    | A | `@` | `75.2.60.5` |
    | CNAME | `www` | `[your-site-name].netlify.app` |
 
-4. Also add `www.bolts10.com` in Netlify and configure it to redirect to `bolts10.com` (Netlify does this automatically).
+4. Also add `www.bolts11.com` in Netlify and configure it to redirect to `bolts11.com` (Netlify does this automatically).
 
 SSL is provisioned automatically. Can take up to 24 hours for DNS to propagate.
 
 ---
 
-## DNS Reference — bolts10.com on Cloudflare
+## DNS Reference — bolts11.com on Cloudflare
 
 If you use **Cloudflare Pages** (recommended), you will not need to manually add DNS records —
 Cloudflare does it automatically when you activate the custom domain. The records it creates:
@@ -235,10 +235,10 @@ Cloudflare does it automatically when you activate the custom domain. The record
 | Type | Name | Value | Proxy |
 |---|---|---|---|
 | CNAME | `@` (root) | `bolts10.pages.dev` | Proxied (orange cloud) |
-| CNAME | `www` | `bolts10.com` | Proxied (orange cloud) |
+| CNAME | `www` | `bolts11.com` | Proxied (orange cloud) |
 
 If you use **Vercel or Netlify** and your DNS is on Cloudflare, add these manually in
-**Cloudflare Dashboard → bolts10.com → DNS → Records**:
+**Cloudflare Dashboard → bolts11.com → DNS → Records**:
 
 **For Vercel:**
 | Type | Name | Value | Proxy |
@@ -260,17 +260,17 @@ If you use **Vercel or Netlify** and your DNS is on Cloudflare, add these manual
 
 ## Pre-Launch Checklist
 
-- [ ] Confirm `support@bolts10.com` is a live email alias
-- [ ] Confirm `demo@bolts10.com` is a live email alias
+- [ ] Confirm `support@bolts11.com` is a live email alias
+- [ ] Confirm `demo@bolts11.com` is a live email alias
 - [ ] Replace `#booking-widget` placeholder in `index.html` with actual embed code
-- [ ] Verify Privacy Policy URL resolves at `bolts10.com/privacy-policy`
-- [ ] Verify Terms URL resolves at `bolts10.com/terms-and-conditions`
+- [ ] Verify Privacy Policy URL resolves at `bolts11.com/privacy-policy`
+- [ ] Verify Terms URL resolves at `bolts11.com/terms-and-conditions`
 - [ ] Test STOP and HELP keyword auto-responses are wired in Flask app
 - [ ] Confirm Telnyx webhook URL is live at Railway before going live
 - [ ] Update copyright year in footer if needed
 - [ ] Run all pages through [Google PageSpeed Insights](https://pagespeed.web.dev/) after deploy
-- [ ] Submit bolts10.com to [Google Search Console](https://search.google.com/search-console) after go-live
-- [ ] Verify security headers are active: `curl -I https://bolts10.com/`
+- [ ] Submit bolts11.com to [Google Search Console](https://search.google.com/search-console) after go-live
+- [ ] Verify security headers are active: `curl -I https://bolts11.com/`
 - [ ] Verify `/privacy` → `/privacy-policy` redirect works
 - [ ] Verify `/terms` → `/terms-and-conditions` redirect works
 - [ ] Confirm HSTS is enabled in Cloudflare SSL/TLS settings (after confirming HTTPS works)
@@ -296,5 +296,5 @@ If you use **Vercel or Netlify** and your DNS is on Cloudflare, add these manual
 - Minimum consent disclosure language (copy-ready for intake forms)
 - Acceptable use policy — no spam, no marketing SMS
 - TCPA indemnification by the Client business
-- Limitation of Bolts10's liability
+- Limitation of Bolts11's liability
 - Governing law (Delaware) and arbitration clause
