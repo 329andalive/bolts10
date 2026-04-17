@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Bolts11 — The AI Back Office Suite</title>
-  <meta name="description" content="Bolts11 replaces the notebook, the sticky notes, and the $150/month scheduling app. SMS scheduling, invoicing, proposals, and dispatch — for trades, studios, clinics, and service businesses.">
+  <title>Bolts11 — The AI Back Office Dashboard &amp; PWA</title>
+  <meta name="description" content="Bolts11 is a dashboard and Progressive Web App that replaces the notebook, the sticky notes, and the $150/month scheduling stack. Three editions — Lite for solo practitioners, Pro for tradespeople, Fleet for large dispatch.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -101,20 +101,6 @@
     .feature-card h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:7px}
     .feature-card p{font-size:13.5px;color:var(--gray-500);line-height:1.65}
 
-    /* ── Audiences toggle ── */
-    .audience-toggle-wrap{display:flex;justify-content:center;margin-bottom:48px}
-    .audience-toggle{display:inline-flex;background:var(--gray-100);border-radius:100px;padding:4px;gap:4px}
-    .audience-toggle button{padding:10px 24px;border-radius:100px;border:none;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;background:transparent;color:var(--gray-500);font-family:inherit}
-    .audience-toggle button.active{background:var(--navy);color:var(--white);box-shadow:var(--shadow)}
-    .audience-panel{display:none}
-    .audience-panel.active{display:grid}
-    .audience-grid{grid-template-columns:repeat(4,1fr);gap:16px}
-    .audience-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:22px 16px;text-align:center;box-shadow:var(--shadow);transition:all 0.15s}
-    .audience-card:hover{border-color:var(--amber);box-shadow:var(--shadow-lg)}
-    .audience-card .aud-icon{font-size:30px;margin-bottom:10px}
-    .audience-card .aud-name{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:4px}
-    .audience-card .aud-pain{font-size:12px;color:var(--gray-400)}
-
     /* ── Pricing comparison ── */
     .vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:720px;margin:0 auto}
     .vs-card{border-radius:var(--radius-lg);padding:32px 28px}
@@ -170,11 +156,52 @@
     .footer-bottom p,.footer-bottom a{font-size:12px}
     .footer-legal{font-size:11px;line-height:1.65;margin-bottom:22px;opacity:0.4}
 
+    /* ── Editions ── */
+    .editions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .edition-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:32px 28px;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;transition:all 0.2s}
+    .edition-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+    .edition-card.featured{border:2px solid var(--amber);box-shadow:var(--shadow-lg)}
+    .edition-badge{position:absolute;top:-12px;left:28px;background:var(--amber);color:var(--navy);font-size:11px;font-weight:800;padding:4px 12px;border-radius:100px;text-transform:uppercase;letter-spacing:0.05em}
+    .edition-tier{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gray-400);margin-bottom:6px}
+    .edition-name{font-size:24px;font-weight:800;color:var(--navy);margin-bottom:6px}
+    .edition-name .bolt{color:var(--amber)}
+    .edition-tag{font-size:14px;color:var(--gray-500);line-height:1.5;margin-bottom:20px}
+    .edition-price{font-size:30px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:4px}
+    .edition-price .per{font-size:13px;font-weight:500;color:var(--gray-400)}
+    .edition-price-note{font-size:12px;color:var(--gray-400);margin-bottom:22px;min-height:32px}
+    .edition-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
+    .edition-list li{font-size:13.5px;color:var(--gray-700);display:flex;align-items:flex-start;gap:8px;line-height:1.55}
+    .edition-list li::before{content:'✓';color:#22c55e;font-weight:700;flex-shrink:0;margin-top:0}
+    .edition-for{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray-400);margin-bottom:10px}
+    .edition-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px}
+    .edition-pills span{background:var(--gray-100);color:var(--gray-700);font-size:12px;padding:4px 10px;border-radius:100px;font-weight:500}
+    .edition-card .btn{margin-top:auto;width:100%}
+
+    /* ── PWA mock device ── */
+    .device-row{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-top:8px}
+    .device-copy h3{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:12px}
+    .device-copy p{font-size:15px;color:var(--gray-500);line-height:1.7;margin-bottom:14px}
+    .device-frame{background:var(--navy-deeper);border-radius:28px;padding:14px;box-shadow:var(--shadow-xl);max-width:360px;margin:0 auto;border:6px solid #0a1220}
+    .device-screen{background:var(--gray-50);border-radius:16px;padding:18px;min-height:460px;display:flex;flex-direction:column;gap:12px}
+    .device-topbar{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--gray-500);font-weight:600}
+    .device-topbar .dot-row{display:flex;gap:5px}
+    .device-topbar .dot-row span{width:6px;height:6px;border-radius:50%;background:var(--gray-400)}
+    .device-title{font-size:17px;font-weight:800;color:var(--navy);margin-top:4px}
+    .device-sub{font-size:12px;color:var(--gray-400);margin-bottom:6px}
+    .device-card{background:var(--white);border:1px solid var(--gray-200);border-radius:10px;padding:11px 13px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
+    .device-card .dc-left{display:flex;flex-direction:column;gap:2px}
+    .device-card .dc-name{font-size:13px;font-weight:700;color:var(--navy)}
+    .device-card .dc-meta{font-size:11px;color:var(--gray-400)}
+    .device-card .dc-status{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:0.04em}
+    .dc-status.done{background:#dcfce7;color:#166534}
+    .dc-status.live{background:#fef3c7;color:#92400e}
+    .dc-status.new{background:#dbeafe;color:#1e40af}
+
     /* ── Responsive ── */
     @media(max-width:960px){
-      .steps-grid,.features-grid,.testimonials-grid{grid-template-columns:1fr}
-      .audience-grid{grid-template-columns:repeat(2,1fr)}
+      .steps-grid,.features-grid,.testimonials-grid,.editions-grid{grid-template-columns:1fr}
       .vs-grid{grid-template-columns:1fr}
+      .device-row{grid-template-columns:1fr;gap:24px}
       .footer-top{grid-template-columns:1fr 1fr;gap:32px}
       .hero h1{font-size:46px}
       .section-title{font-size:30px}
@@ -187,7 +214,6 @@
       .hero h1{font-size:36px}
       .hero-sub{font-size:17px}
       .section{padding:56px 20px}
-      .audience-grid{grid-template-columns:repeat(2,1fr)}
       .footer-top{grid-template-columns:1fr}
       .footer-bottom{flex-direction:column;text-align:center}
     }
@@ -201,8 +227,8 @@
     <a href="index.html" class="nav-logo"><span class="bolt">&#9889;</span> Bolts11</a>
     <div class="nav-links">
       <a href="#how-it-works">How It Works</a>
+      <a href="#editions">Editions</a>
       <a href="#features">Features</a>
-      <a href="#who">Who It's For</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact">Get Access</a>
     </div>
@@ -215,8 +241,8 @@
 </nav>
 <div class="mobile-menu" id="mobile-menu">
   <a href="#how-it-works" onclick="this.closest('.mobile-menu').classList.remove('open')">How It Works</a>
+  <a href="#editions" onclick="this.closest('.mobile-menu').classList.remove('open')">Editions</a>
   <a href="#features" onclick="this.closest('.mobile-menu').classList.remove('open')">Features</a>
-  <a href="#who" onclick="this.closest('.mobile-menu').classList.remove('open')">Who It's For</a>
   <a href="#pricing" onclick="this.closest('.mobile-menu').classList.remove('open')">Pricing</a>
   <a href="#contact" onclick="this.closest('.mobile-menu').classList.remove('open')">Get Access</a>
   <a href="signin.html" style="color:var(--amber);font-weight:700">Sign In &rarr;</a>
@@ -229,31 +255,26 @@
   <div class="container" style="position:relative;z-index:1">
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-dot"></span>
-      Now available for all service businesses
+      One dashboard. Three editions. Installs like an app.
     </div>
     <h1>Your back office,<br><em>finally automated.</em></h1>
-    <p class="hero-sub">SMS scheduling. Instant invoices. Automatic follow-up. Dispatch and proposals — all from a text message. No app. No training. No monthly software bill that makes you wince.</p>
+    <p class="hero-sub">A live dashboard and Progressive Web App that runs your scheduling, dispatch, proposals, invoicing, and follow-up. Installs on any phone or desktop — no App Store, no downloads, no monthly software bill that makes you wince.</p>
     <div class="hero-audiences">
-      <span class="audience-pill">&#129695; Plumbers</span>
-      <span class="audience-pill">&#127939; Yoga Studios</span>
-      <span class="audience-pill">&#10052; HVAC</span>
-      <span class="audience-pill">&#127947; Fitness Coaches</span>
-      <span class="audience-pill">&#128688; Sewer &amp; Drain</span>
-      <span class="audience-pill">&#128657; Auto Shops</span>
-      <span class="audience-pill">&#9889; Electrical</span>
-      <span class="audience-pill">&#129657; Massage Therapists</span>
+      <span class="audience-pill">&#129658; Bolts11 Lite — solo practitioners</span>
+      <span class="audience-pill">&#129520; Bolts11 Pro — tradespeople</span>
+      <span class="audience-pill">&#128666; Bolts11 Fleet — large dispatch</span>
     </div>
     <div class="hero-btns">
-      <a href="#contact" class="btn btn-amber btn-lg">Request Early Access</a>
-      <a href="#how-it-works" class="btn btn-outline-white btn-lg">See How It Works</a>
+      <a href="#editions" class="btn btn-amber btn-lg">See the Editions</a>
+      <a href="#how-it-works" class="btn btn-outline-white btn-lg">How It Works</a>
     </div>
-    <p class="hero-trust">No credit card required &middot; Setup in under 10 minutes &middot; Cancel any time</p>
+    <p class="hero-trust">No credit card required &middot; Works on every device &middot; Installs in one tap</p>
   </div>
 </section>
 
 <!-- Comparison bar -->
 <div class="compare-bar">
-  <p>Yoga studios are paying <strong>$129/month</strong> just for class scheduling. Auto shops pay <strong>$89/month</strong> for reminder texts. Bolts11 does all of it — <strong>for less than one of those.</strong></p>
+  <p>Studios pay <strong>$129/mo</strong> for scheduling. Trades pay <strong>$200+/mo</strong> for dispatch. Fleets pay <strong>$600+/mo</strong> for routing. Bolts11 picks the right edition for you — and costs less than one of those.</p>
 </div>
 
 <!-- How It Works -->
@@ -261,36 +282,37 @@
   <div class="container">
     <div class="section-header">
       <div class="section-label">How It Works</div>
-      <h2 class="section-title">Text in. Done.</h2>
-      <p class="section-subtitle">No new app to learn. No dashboard to live in. You run your business — Bolts11 handles the back office by SMS.</p>
+      <h2 class="section-title">One dashboard. Everywhere you are.</h2>
+      <p class="section-subtitle">Bolts11 is a Progressive Web App — it installs from any modern browser and runs like a native app on your phone, tablet, or desktop. No App Store. No updates. No new hardware.</p>
     </div>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
-        <h3>Text a job or booking</h3>
-        <p>Your crew texts in a job description, or a client books through your scheduling link. Bolts11 understands natural language — no special format required.</p>
+        <h3>Install the dashboard</h3>
+        <p>Open bolts11.com on your phone and tap "Install." The dashboard lives on your home screen like any other app — but works on every device, signed in or shared with your crew.</p>
         <div class="step-sms">
-          <span class="sms-in">You: </span>est (207) 555-0192 pump out 1500 gal septic Beverly Rd<br>
-          <span class="sms-out">Bolts11: </span>Proposal sent to Beverly — $285. Awaiting approval.
+          <span class="sms-out">bolts11.com</span><br>
+          <span class="sms-in">&rarr; Add to Home Screen</span><br>
+          <span class="sms-out">Installed. Opens offline.</span>
         </div>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <h3>Bolts11 handles the rest</h3>
-        <p>Customer gets a confirmation. Invoice gets drafted. Follow-up gets scheduled. Square payment link attached. All automatically — while you're still on the job.</p>
+        <h3>Run the day from the board</h3>
+        <p>Jobs, bookings, proposals, and invoices move across a live dashboard your whole team can see. The AI drafts estimates, schedules follow-ups, and dispatches the next crew — you just tap approve.</p>
         <div class="step-sms">
-          <span class="sms-in">Client texts DONE</span><br>
-          <span class="sms-out">Bolts11: </span>Invoice sent: $285 + tax. Pay: bolt.li/x8f2<br>
-          <span class="sms-out">Bolts11: </span>Follow-up scheduled in 48h if unpaid.
+          <span class="sms-out">Dashboard: </span>3 jobs queued, 2 proposals awaiting approval<br>
+          <span class="sms-in">&rarr; Approve all</span><br>
+          <span class="sms-out">Sent. Customers notified.</span>
         </div>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <h3>You get paid, reviewed, and remembered</h3>
-        <p>Payment confirmation hits your Square account. Google review request fires at exactly the right moment. Your customers remember you — and so does Bolts11.</p>
+        <h3>Get paid, reviewed, remembered</h3>
+        <p>Square payment links attach automatically. Follow-ups fire if an invoice goes unpaid. Google review requests hit at the right moment — and every touchpoint shows up on the same dashboard.</p>
         <div class="step-sms">
-          <span class="sms-out">Bolts11: </span>Payment received $298.68 &#10003;<br>
-          <span class="sms-out">Bolts11: </span>Review request sent to Beverly. She rated you &#9733;&#9733;&#9733;&#9733;&#9733;
+          <span class="sms-out">Dashboard: </span>Payment received $298.68 &#10003;<br>
+          <span class="sms-out">Dashboard: </span>Review request sent &mdash; rated &#9733;&#9733;&#9733;&#9733;&#9733;
         </div>
       </div>
     </div>
@@ -298,33 +320,38 @@
 </section>
 
 <!-- Features -->
-<section class="section section-gray" id="features">
+<section class="section" id="features">
   <div class="container">
     <div class="section-header">
       <div class="section-label">Features</div>
       <h2 class="section-title">One suite. Everything covered.</h2>
-      <p class="section-subtitle">Built piece by piece to solve the real problems small businesses face — not the ones that look good on a feature list.</p>
+      <p class="section-subtitle">Built piece by piece to solve the real problems service businesses face — not the ones that look good on a feature list.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card">
-        <span class="feature-icon">&#128241;</span>
-        <h3>SMS Scheduling</h3>
-        <p>Clients book via SMS or a simple link. Confirmations, reminders, and rescheduling all happen automatically. No app download, no login.</p>
+        <span class="feature-icon">&#128202;</span>
+        <h3>Live Dashboard</h3>
+        <p>Every job, booking, proposal, and invoice moves across one live board. Owner, dispatcher, and crew all see the same picture — in real time.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">&#128203;</span>
-        <h3>Instant Proposals &amp; Invoices</h3>
-        <p>Text a job description and get a professional estimate back in seconds. Invoice drafts on job completion. Square payment links built in.</p>
+        <span class="feature-icon">&#128241;</span>
+        <h3>Installable PWA</h3>
+        <p>One tap installs Bolts11 on iOS, Android, or desktop. Works offline, gets push notifications, updates instantly — no App Store, no downloads, no IT.</p>
       </div>
       <div class="feature-card">
         <span class="feature-icon">&#129302;</span>
-        <h3>AI Dispatch Assistant</h3>
-        <p>Bolts11 learns your routes, your crew's skills, and your busy patterns. Gets smarter the more you use it.</p>
+        <h3>AI Dispatch &amp; Drafting</h3>
+        <p>Paste in a job and get a proposal back in seconds. The AI learns your routes, your pricing, and your crew's skills — and gets sharper the more you use it.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">&#11088;</span>
-        <h3>Automatic Review Requests</h3>
-        <p>Google review requests fire at the perfect moment — right after job completion, while your customer is still happy. Your rating climbs on autopilot.</p>
+        <span class="feature-icon">&#128203;</span>
+        <h3>Proposals &amp; Invoicing</h3>
+        <p>Estimates go out on approval. Invoices draft on job completion. Square payment links built in. PDF on every document, always.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">&#128197;</span>
+        <h3>Scheduling &amp; Reminders</h3>
+        <p>Public booking pages, waitlists, and reschedule-by-tap. Automated confirmations and reminders go out on your timeline — without you lifting a finger.</p>
       </div>
       <div class="feature-card">
         <span class="feature-icon">&#128176;</span>
@@ -332,119 +359,213 @@
         <p>Unpaid invoice? Bolts11 follows up automatically at the right intervals. No awkward calls. Most invoices get paid before you even notice they're outstanding.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">&#127775;</span>
-        <h3>Your Business Voice</h3>
-        <p>Every message sounds like you wrote it — not a robot. Bolts11 learns your pricing language, your service area, and your tone from day one.</p>
+        <span class="feature-icon">&#11088;</span>
+        <h3>Automatic Review Requests</h3>
+        <p>Google review requests fire at the perfect moment — right after job completion, while your customer is still happy. Your rating climbs on autopilot.</p>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">&#128202;</span>
-        <h3>Live Dashboard</h3>
-        <p>Every job, message, invoice, and proposal in one place. Know what's done and what's pending at a glance. No spreadsheet required.</p>
+        <span class="feature-icon">&#127775;</span>
+        <h3>Your Business Voice</h3>
+        <p>Every notification sounds like you wrote it — not a robot. Bolts11 learns your pricing language, your service area, and your tone from day one.</p>
       </div>
       <div class="feature-card">
         <span class="feature-icon">&#128274;</span>
         <h3>Compliant by Default</h3>
-        <p>STOP opt-out honored instantly. CTIA-compliant messaging. 10DLC registered. Your customers' trust, protected — legally and technically.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">&#128295;</span>
-        <h3>Zero New Hardware</h3>
-        <p>Your crew already has a phone. That's all they need. No tablets, no scanners, no new equipment. Works on every phone, everywhere — including dead zones.</p>
+        <p>Notifications go out over carrier-compliant SMS channels. STOP opt-out honored instantly. 10DLC registered. Customer trust protected — legally and technically.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Who It's For — tabbed audience view -->
-<section class="section" id="who">
+<!-- Three Editions -->
+<section class="section" id="editions">
   <div class="container">
     <div class="section-header text-center">
-      <div class="section-label">Who It's For</div>
-      <h2 class="section-title">Built for the field. Ready for the studio.</h2>
-      <p class="section-subtitle">If your business runs on appointments, jobs, and customer communication — Bolts11 was built for you.</p>
+      <div class="section-label">Three Editions</div>
+      <h2 class="section-title">One dashboard, sized for your business.</h2>
+      <p class="section-subtitle">Bolts11 comes in three editions. Same dashboard DNA, same PWA install, different depth. Pick the one that fits — you can move up as you grow.</p>
     </div>
 
-    <div class="audience-toggle-wrap">
-      <div class="audience-toggle">
-        <button class="active" onclick="showAudience('trades', this)">&#129695; Trades &amp; Service</button>
-        <button onclick="showAudience('wellness', this)">&#127939; Wellness &amp; Fitness</button>
-        <button onclick="showAudience('professional', this)">&#128657; Shops &amp; Clinics</button>
+    <div class="editions-grid">
+
+      <!-- Lite -->
+      <div class="edition-card">
+        <div class="edition-tier">Lightweight</div>
+        <div class="edition-name"><span class="bolt">&#9889;</span> Bolts11 Lite</div>
+        <p class="edition-tag">A clean scheduler and client dashboard for solo practitioners and small practices. If you mostly just need bookings, reminders, and a tidy calendar — this is it.</p>
+        <div class="edition-price">$29<span class="per">/mo</span></div>
+        <p class="edition-price-note">Founding member rate. One user, unlimited bookings.</p>
+        <ul class="edition-list">
+          <li>Online booking page &amp; shareable link</li>
+          <li>Calendar dashboard with drag-to-reschedule</li>
+          <li>Automated reminders &amp; confirmations</li>
+          <li>Square payment collection</li>
+          <li>Installs as a PWA on any device</li>
+        </ul>
+        <div class="edition-for">Built for</div>
+        <div class="edition-pills">
+          <span>Doctors' offices</span>
+          <span>Yoga instructors</span>
+          <span>Massage therapists</span>
+          <span>Tutors</span>
+          <span>Barbers</span>
+          <span>Solo clinics</span>
+        </div>
+        <a href="#contact" class="btn btn-outline btn-lg" data-edition="lite">Request Lite Access</a>
       </div>
+
+      <!-- Pro (featured) -->
+      <div class="edition-card featured">
+        <div class="edition-badge">Most Popular</div>
+        <div class="edition-tier">Standard</div>
+        <div class="edition-name"><span class="bolt">&#9889;</span> Bolts11 Pro</div>
+        <p class="edition-tag">The full back-office dashboard for tradespeople. Dispatch, proposals, invoicing, crew management, and AI that learns your pricing and routes.</p>
+        <div class="edition-price">$49<span class="per">/mo</span></div>
+        <p class="edition-price-note">Founding member rate. Up to 10 users &amp; crew devices.</p>
+        <ul class="edition-list">
+          <li>Everything in Lite, plus&hellip;</li>
+          <li>Live dispatch board &amp; crew PWA</li>
+          <li>Instant proposals &amp; invoices from a job description</li>
+          <li>AI that learns your pricing, routes, and tone</li>
+          <li>Automated payment follow-up &amp; Google reviews</li>
+          <li>Multi-user roles (owner, dispatcher, crew)</li>
+        </ul>
+        <div class="edition-for">Built for</div>
+        <div class="edition-pills">
+          <span>Plumbers</span>
+          <span>HVAC</span>
+          <span>Sewer &amp; drain</span>
+          <span>Electricians</span>
+          <span>Landscapers</span>
+          <span>Lawn care</span>
+          <span>Painters</span>
+        </div>
+        <a href="#contact" class="btn btn-amber btn-lg" data-edition="pro">Request Pro Access</a>
+      </div>
+
+      <!-- Fleet -->
+      <div class="edition-card">
+        <div class="edition-tier">Heavyweight</div>
+        <div class="edition-name"><span class="bolt">&#9889;</span> Bolts11 Fleet</div>
+        <p class="edition-tag">A dispatcher's cockpit for fleets running dozens of trucks. Multi-dispatcher views, route optimization, driver PWA, real-time job tracking, and reporting that holds up under scale.</p>
+        <div class="edition-price">Custom</div>
+        <p class="edition-price-note">Priced per fleet. Typical pilots start at $6/truck/day.</p>
+        <ul class="edition-list">
+          <li>Everything in Pro, plus&hellip;</li>
+          <li>Multi-dispatcher simultaneous editing</li>
+          <li>Route optimization &amp; live ETA</li>
+          <li>Driver PWA with offline job queue</li>
+          <li>Real-time GPS &amp; job status board</li>
+          <li>Fleet analytics &amp; SLA reporting</li>
+          <li>Dedicated onboarding &amp; SLA</li>
+        </ul>
+        <div class="edition-for">Built for</div>
+        <div class="edition-pills">
+          <span>Multi-crew trades</span>
+          <span>Delivery fleets</span>
+          <span>Service franchises</span>
+          <span>Field service ops</span>
+          <span>Utilities &amp; municipal</span>
+        </div>
+        <a href="#contact" class="btn btn-outline btn-lg" data-edition="fleet">Talk to Fleet Sales</a>
+      </div>
+
     </div>
 
-    <div id="panel-trades" class="audience-panel active audience-grid">
-      <div class="audience-card"><div class="aud-icon">&#129695;</div><div class="aud-name">Plumbing</div><div class="aud-pain">Dispatch &amp; invoicing</div></div>
-      <div class="audience-card"><div class="aud-icon">&#10052;&#65039;</div><div class="aud-name">HVAC</div><div class="aud-pain">Job scheduling &amp; follow-up</div></div>
-      <div class="audience-card"><div class="aud-icon">&#128688;</div><div class="aud-name">Sewer &amp; Drain</div><div class="aud-pain">Route &amp; proposal SMS</div></div>
-      <div class="audience-card"><div class="aud-icon">&#128167;</div><div class="aud-name">Septic Service</div><div class="aud-pain">Pump-out scheduling</div></div>
-      <div class="audience-card"><div class="aud-icon">&#127959;&#65039;</div><div class="aud-name">Excavation</div><div class="aud-pain">Job estimates &amp; crew dispatch</div></div>
-      <div class="audience-card"><div class="aud-icon">&#9889;</div><div class="aud-name">Electrical</div><div class="aud-pain">Quote-to-invoice flow</div></div>
-      <div class="audience-card"><div class="aud-icon">&#128293;</div><div class="aud-name">Heating &amp; Oil</div><div class="aud-pain">Seasonal scheduling</div></div>
-      <div class="audience-card"><div class="aud-icon">&#127968;</div><div class="aud-name">Home Services</div><div class="aud-pain">Customer communication</div></div>
-    </div>
-
-    <div id="panel-wellness" class="audience-panel audience-grid" style="display:none">
-      <div class="audience-card"><div class="aud-icon">&#127939;</div><div class="aud-name">Yoga Studios</div><div class="aud-pain">Class booking by SMS</div></div>
-      <div class="audience-card"><div class="aud-icon">&#127947;</div><div class="aud-name">Personal Trainers</div><div class="aud-pain">Session scheduling &amp; reminders</div></div>
-      <div class="audience-card"><div class="aud-icon">&#129657;</div><div class="aud-name">Massage Therapy</div><div class="aud-pain">Appointment confirmations</div></div>
-      <div class="audience-card"><div class="aud-icon">&#129338;</div><div class="aud-name">Acupuncture</div><div class="aud-pain">New client intake + SMS</div></div>
-      <div class="audience-card"><div class="aud-icon">&#127951;</div><div class="aud-name">Pilates Studios</div><div class="aud-pain">Class capacity &amp; waitlist</div></div>
-      <div class="audience-card"><div class="aud-icon">&#129340;</div><div class="aud-name">Nutrition Coaches</div><div class="aud-pain">Check-in &amp; follow-up texts</div></div>
-      <div class="audience-card"><div class="aud-icon">&#128170;</div><div class="aud-name">CrossFit / Gyms</div><div class="aud-pain">Member comms &amp; billing</div></div>
-      <div class="audience-card"><div class="aud-icon">&#129486;</div><div class="aud-name">Dance Studios</div><div class="aud-pain">Recital &amp; class reminders</div></div>
-    </div>
-
-    <div id="panel-professional" class="audience-panel audience-grid" style="display:none">
-      <div class="audience-card"><div class="aud-icon">&#128657;</div><div class="aud-name">Auto Repair</div><div class="aud-pain">Appointment + pickup SMS</div></div>
-      <div class="audience-card"><div class="aud-icon">&#128084;</div><div class="aud-name">Barber Shops</div><div class="aud-pain">Booking &amp; no-show reduction</div></div>
-      <div class="audience-card"><div class="aud-icon">&#128138;</div><div class="aud-name">Hair Salons</div><div class="aud-pain">Appointment reminders</div></div>
-      <div class="audience-card"><div class="aud-icon">&#128050;</div><div class="aud-name">Vet Clinics</div><div class="aud-pain">Appointment &amp; vaccination reminders</div></div>
-      <div class="audience-card"><div class="aud-icon">&#128048;</div><div class="aud-name">Pet Grooming</div><div class="aud-pain">Booking &amp; pickup notification</div></div>
-      <div class="audience-card"><div class="aud-icon">&#128247;</div><div class="aud-name">Photography</div><div class="aud-pain">Session booking &amp; delivery SMS</div></div>
-      <div class="audience-card"><div class="aud-icon">&#129717;</div><div class="aud-name">Tutoring</div><div class="aud-pain">Session reminders &amp; invoicing</div></div>
-      <div class="audience-card"><div class="aud-icon">&#128188;</div><div class="aud-name">Consulting</div><div class="aud-pain">Meeting scheduling &amp; follow-up</div></div>
-    </div>
-
+    <p style="text-align:center;font-size:13px;color:var(--gray-400);margin-top:32px">Each edition will soon have its own home. For now, all requests come through this page and we'll route you to the right team.</p>
   </div>
 </section>
 
-<!-- Pricing comparison -->
+<!-- PWA visual -->
+<section class="section section-gray" id="pwa">
+  <div class="container">
+    <div class="device-row">
+      <div class="device-copy">
+        <div class="section-label">Installs like an app</div>
+        <h2 class="section-title" style="font-size:32px">A dashboard in your pocket, not another login in a browser tab.</h2>
+        <p>Bolts11 is a Progressive Web App. One tap from bolts11.com installs it on your home screen, works offline, and pushes notifications — everything a native app does, with none of the App Store friction.</p>
+        <h3>Why PWA matters for you:</h3>
+        <p>Works on every device your crew already owns. Updates instantly when we ship features. Nothing to sideload, nothing to approve, nothing to break when iOS updates overnight.</p>
+      </div>
+      <div class="device-frame">
+        <div class="device-screen">
+          <div class="device-topbar">
+            <span>&#9889; Bolts11</span>
+            <div class="dot-row"><span></span><span></span><span></span></div>
+          </div>
+          <div class="device-title">Today's board</div>
+          <div class="device-sub">Tue Apr 21 &middot; 6 jobs &middot; 2 awaiting approval</div>
+          <div class="device-card">
+            <div class="dc-left">
+              <div class="dc-name">Beverly Rd &mdash; septic pump</div>
+              <div class="dc-meta">9:00 AM &middot; Mike D.</div>
+            </div>
+            <div class="dc-status live">En route</div>
+          </div>
+          <div class="device-card">
+            <div class="dc-left">
+              <div class="dc-name">14 Elm St &mdash; HVAC tune-up</div>
+              <div class="dc-meta">11:30 AM &middot; Rachel T.</div>
+            </div>
+            <div class="dc-status new">Proposal</div>
+          </div>
+          <div class="device-card">
+            <div class="dc-left">
+              <div class="dc-name">Sarah K. &mdash; 6pm vinyasa</div>
+              <div class="dc-meta">12 booked &middot; waitlist 3</div>
+            </div>
+            <div class="dc-status done">Full</div>
+          </div>
+          <div class="device-card">
+            <div class="dc-left">
+              <div class="dc-name">Oak Terrace &mdash; drain snake</div>
+              <div class="dc-meta">2:15 PM &middot; Crew 2</div>
+            </div>
+            <div class="dc-status done">Paid</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing recap -->
 <section class="section section-gray" id="pricing">
   <div class="container">
     <div class="section-header text-center">
       <div class="section-label">Pricing</div>
       <h2 class="section-title">Stop paying three apps to do one job.</h2>
-      <p class="section-subtitle">Mindbody, Acuity, ServiceTitan, Housecall Pro — they each charge for what Bolts11 does together. Early access pricing is locked for founding members.</p>
+      <p class="section-subtitle">Mindbody, Acuity, ServiceTitan, Housecall Pro, Verizon Connect — they each charge for a slice of what Bolts11 does on one dashboard. Founding-member pricing is locked for early access.</p>
     </div>
     <div class="vs-grid">
       <div class="vs-card them">
-        <h3>The old way</h3>
+        <h3>The old stack</h3>
         <div class="vs-price">$200+<span class="vs-period">/mo</span></div>
-        <p style="font-size:13px;color:var(--gray-400);margin-top:8px">Mindbody ($129) + invoice tool ($29) + texting app ($49)</p>
+        <p style="font-size:13px;color:var(--gray-400);margin-top:8px">Scheduler + invoice tool + dispatch + review app</p>
         <ul class="vs-list">
           <li><span class="vs-x">&#10007;</span>Separate logins for each tool</li>
           <li><span class="vs-x">&#10007;</span>Manual data entry between apps</li>
           <li><span class="vs-x">&#10007;</span>No AI — you do all the thinking</li>
-          <li><span class="vs-x">&#10007;</span>Per-SMS charges add up fast</li>
+          <li><span class="vs-x">&#10007;</span>App Store friction for every device</li>
           <li><span class="vs-x">&#10007;</span>Different support for every platform</li>
         </ul>
       </div>
       <div class="vs-card us">
         <div class="vs-badge">Founding Member Rate</div>
         <h3>Bolts11</h3>
-        <div class="vs-price">$79<span class="vs-period">/mo</span></div>
-        <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-top:8px">Everything, one place. Price locked for early access members.</p>
+        <div class="vs-price">$29&ndash;$49<span class="vs-period">/mo</span></div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-top:8px">Lite for solo, Pro for trades, Fleet priced per fleet.</p>
         <ul class="vs-list">
-          <li><span class="vs-check">&#10003;</span>SMS scheduling + reminders</li>
-          <li><span class="vs-check">&#10003;</span>Proposals &amp; invoices with Square</li>
-          <li><span class="vs-check">&#10003;</span>AI dispatch &amp; job routing</li>
-          <li><span class="vs-check">&#10003;</span>Automatic payment follow-up</li>
-          <li><span class="vs-check">&#10003;</span>Google review automation</li>
-          <li><span class="vs-check">&#10003;</span>One dashboard, one support line</li>
+          <li><span class="vs-check">&#10003;</span>One dashboard, one login, one bill</li>
+          <li><span class="vs-check">&#10003;</span>Installs as a PWA &mdash; no App Store</li>
+          <li><span class="vs-check">&#10003;</span>AI drafts proposals &amp; dispatch</li>
+          <li><span class="vs-check">&#10003;</span>Square, reminders, reviews built in</li>
+          <li><span class="vs-check">&#10003;</span>Scales from 1 user to a fleet</li>
+          <li><span class="vs-check">&#10003;</span>Founding-member price locked</li>
         </ul>
       </div>
     </div>
-    <p style="text-align:center;font-size:13px;color:var(--gray-400);margin-top:28px">Founding member pricing requires early access request. <a href="#contact" style="color:var(--amber);font-weight:600">Request yours &rarr;</a></p>
+    <p style="text-align:center;font-size:13px;color:var(--gray-400);margin-top:28px">See edition-by-edition pricing above. <a href="#editions" style="color:var(--amber);font-weight:600">Jump to the editions &rarr;</a></p>
   </div>
 </section>
 
@@ -458,18 +579,18 @@
     <div class="testimonials-grid">
       <div class="testimonial-card">
         <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&ldquo;I used to get calls all day asking 'when are you coming?' Now my customers know before they even have to ask. It changed my whole week.&rdquo;</blockquote>
-        <cite>&mdash; Mike D., Owner, rural septic service &mdash; Maine</cite>
+        <blockquote>&ldquo;My dispatcher has the board open all day on her phone, and my crew has it on a tablet in the truck. Everyone sees the same picture. The morning standup basically runs itself now.&rdquo;</blockquote>
+        <cite>&mdash; Mike D., Owner, rural septic service &mdash; Maine (Bolts11 Pro)</cite>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&ldquo;I was paying Mindbody $129 a month and still texting clients manually to confirm classes. Bolts11 handles everything. My Saturday morning class fills itself now.&rdquo;</blockquote>
-        <cite>&mdash; Sarah K., Yoga instructor &mdash; Portland, OR</cite>
+        <blockquote>&ldquo;I was paying Mindbody $129 a month for a scheduler I barely used. I installed Bolts11 Lite on my phone in a minute — students book themselves now, and I get a clean little dashboard of my week.&rdquo;</blockquote>
+        <cite>&mdash; Sarah K., Yoga instructor &mdash; Portland, OR (Bolts11 Lite)</cite>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&ldquo;We went from chasing unpaid invoices to getting paid the same day. The follow-up texts do it automatically. I don't have to think about it.&rdquo;</blockquote>
-        <cite>&mdash; Rachel T., Office Manager, HVAC &mdash; Tennessee</cite>
+        <blockquote>&ldquo;We went from chasing unpaid invoices to getting paid the same day. The dashboard tells me exactly what's outstanding, and the follow-ups go out on their own. I don't have to think about it.&rdquo;</blockquote>
+        <cite>&mdash; Rachel T., Office Manager, HVAC &mdash; Tennessee (Bolts11 Pro)</cite>
       </div>
     </div>
   </div>
@@ -480,8 +601,8 @@
   <div class="container" style="position:relative;z-index:1">
     <div class="section-header" style="text-align:center">
       <div class="section-label">Get Early Access</div>
-      <h2 class="section-title">Ready to hand off your back office?</h2>
-      <p class="section-subtitle">Tell us about your business and we'll reach out within one business day. Setup takes about 10 minutes.</p>
+      <h2 class="section-title">Ready to install your back office?</h2>
+      <p class="section-subtitle">Tell us which edition fits and we'll reach out within one business day. Setup takes about 10 minutes — you'll install the PWA on your phone and we'll walk through the dashboard with you.</p>
     </div>
     <div id="form-success" style="display:none;max-width:480px;margin:0 auto;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:12px;padding:28px 32px;text-align:center">
       <div style="font-size:36px;margin-bottom:12px">&#10003;</div>
@@ -495,31 +616,43 @@
         <input type="tel" name="phone" id="f-phone" placeholder="Best Phone Number" required>
       </div>
       <input type="email" name="email" id="f-email" placeholder="Email Address" required>
+      <select name="edition" id="f-edition" required>
+        <option value="" disabled selected>Which edition fits you?</option>
+        <option value="lite">Bolts11 Lite — solo practitioner / small clinic</option>
+        <option value="pro">Bolts11 Pro — tradesperson / crew</option>
+        <option value="fleet">Bolts11 Fleet — multi-crew / large dispatch</option>
+        <option value="unsure">Not sure yet — help me pick</option>
+      </select>
       <select name="business_type" id="f-biz" required>
         <option value="" disabled selected>What kind of business?</option>
-        <optgroup label="Trades &amp; Service">
+        <optgroup label="Trades (Pro)">
           <option>Plumbing</option>
           <option>HVAC</option>
           <option>Sewer &amp; Drain</option>
           <option>Septic Service</option>
           <option>Electrical</option>
+          <option>Landscaping</option>
+          <option>Lawn Care</option>
+          <option>Painting</option>
           <option>Excavation</option>
           <option>Heating &amp; Oil</option>
           <option>Other Trade</option>
         </optgroup>
-        <optgroup label="Wellness &amp; Fitness">
+        <optgroup label="Solo / Small Practice (Lite)">
+          <option>Doctor's Office / Clinic</option>
           <option>Yoga Studio</option>
           <option>Personal Training</option>
           <option>Massage Therapy</option>
-          <option>Pilates / Fitness Studio</option>
-          <option>Other Wellness</option>
-        </optgroup>
-        <optgroup label="Shops &amp; Clinics">
-          <option>Auto Repair</option>
           <option>Barber / Salon</option>
-          <option>Veterinary</option>
-          <option>Pet Grooming</option>
-          <option>Other Service Business</option>
+          <option>Tutoring</option>
+          <option>Other Solo Practice</option>
+        </optgroup>
+        <optgroup label="Fleet / Multi-Crew (Fleet)">
+          <option>Multi-Crew Trades</option>
+          <option>Delivery / Logistics Fleet</option>
+          <option>Service Franchise</option>
+          <option>Field Service Ops</option>
+          <option>Utilities / Municipal</option>
         </optgroup>
       </select>
       <button type="submit" class="btn btn-amber btn-lg" id="access-btn" style="width:100%">
@@ -537,13 +670,13 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-logo"><span>&#9889;</span> Bolts11</div>
-        <p>The AI back office suite for trades, studios, and service businesses. SMS scheduling, invoicing, dispatch, and more — from a text message.</p>
+        <p>The AI back-office dashboard and PWA for service businesses. Three editions — Lite for solo practitioners, Pro for tradespeople, Fleet for large dispatch — one installable app.</p>
       </div>
       <div class="footer-col">
         <h4>Platform</h4>
         <a href="#how-it-works">How It Works</a>
+        <a href="#editions">Editions</a>
         <a href="#features">Features</a>
-        <a href="#who">Who It's For</a>
         <a href="#pricing">Pricing</a>
       </div>
       <div class="footer-col">
@@ -558,7 +691,7 @@
         <a href="mailto:support@bolts11.com">support@bolts11.com</a>
       </div>
     </div>
-    <p class="footer-legal">Bolts11 is a multi-tenant SaaS platform. SMS notifications are transactional only. Mobile numbers are never sold or shared. Reply STOP to any message to opt out immediately.</p>
+    <p class="footer-legal">Bolts11 is a multi-tenant SaaS platform delivered as a Progressive Web App. When Bolts11 sends transactional SMS notifications (reminders, confirmations, follow-up), they are transactional only — mobile numbers are never sold or shared, and you can reply STOP to any message to opt out immediately.</p>
     <div class="footer-bottom">
       <p>&copy; 2026 Bolts11. All rights reserved.</p>
       <p><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
@@ -575,10 +708,11 @@ document.getElementById('access-form').addEventListener('submit', async function
   const name    = document.getElementById('f-name').value.trim();
   const phone   = document.getElementById('f-phone').value.trim();
   const email   = document.getElementById('f-email').value.trim();
+  const edition = document.getElementById('f-edition').value;
   const biz     = document.getElementById('f-biz').value;
 
   errEl.style.display = 'none';
-  if (!name || !phone || !email || !biz) {
+  if (!name || !phone || !email || !edition || !biz) {
     errEl.textContent = 'Please fill in all fields.';
     errEl.style.display = 'block';
     return;
@@ -592,7 +726,7 @@ document.getElementById('access-form').addEventListener('submit', async function
     const res = await fetch('https://api.bolts11.com/api/access-request', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, phone, email, business_type: biz })
+      body: JSON.stringify({ name, phone, email, edition, business_type: biz })
     });
     const data = await res.json();
     if (res.ok && data.success) {
@@ -614,22 +748,14 @@ document.getElementById('access-form').addEventListener('submit', async function
   }
 });
 
-// ── Audience tabs ──
-function showAudience(type, btn) {
-  document.querySelectorAll('.audience-panel').forEach(function(p) {
-    p.style.display = 'none';
-    p.classList.remove('active');
+// ── Pre-select edition when an edition CTA is clicked ──
+document.querySelectorAll('[data-edition]').forEach(function(el) {
+  el.addEventListener('click', function() {
+    var ed = el.getAttribute('data-edition');
+    var sel = document.getElementById('f-edition');
+    if (sel && ed) sel.value = ed;
   });
-  document.querySelectorAll('.audience-toggle button').forEach(function(b) {
-    b.classList.remove('active');
-  });
-  var panel = document.getElementById('panel-' + type);
-  if (panel) {
-    panel.style.display = 'grid';
-    panel.classList.add('active');
-  }
-  btn.classList.add('active');
-}
+});
 </script>
 </body>
 </html>

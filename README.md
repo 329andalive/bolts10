@@ -1,6 +1,8 @@
 # Bolts11 — Marketing & Compliance Website
 
-Static marketing site for bolts11.com — automated SMS job notifications for trade service businesses.
+Static marketing site for bolts11.com — the AI back-office dashboard and Progressive Web App for service businesses. Three editions: **Lite** (solo practitioners and small clinics), **Pro** (tradespeople), and **Fleet** (multi-crew / large dispatch).
+
+> Note: the repo folder is still named `bolts10/` for legacy deploy reasons (Cloudflare/Netlify/Vercel project names still reference `bolts10`). The user-facing product and domain are **Bolts11 / bolts11.com**.
 
 ## Pages
 
