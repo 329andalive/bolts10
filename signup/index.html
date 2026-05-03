@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Try the Demo — FleetDispatch by Bolts11</title>
+  <meta name="description" content="Request a free demo of FleetDispatch — the Bolts11 Fleet edition for dispatchers running dozens of trucks. Get a working tenant with seeded sample data within a day." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__logo" aria-label="Bolts11 Home">
+      <span class="navbar__logo-bolt" aria-hidden="true">⚡</span>
+      Bolts11
+    </a>
+    <ul class="navbar__links">
+      <li><a href="/#how-it-works">How It Works</a></li>
+      <li><a href="/#editions">Editions</a></li>
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+    <div class="navbar__cta">
+      <a href="/signup/" class="btn btn-primary" aria-current="page">Try the Demo</a>
+    </div>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="container">
+    <div class="navbar__mobile-menu" id="mobile-menu" role="menu">
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#editions">Editions</a>
+      <a href="/#features">Features</a>
+      <a href="/signup/" style="color: var(--amber); font-weight: 700;">Try the Demo →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="legal-header">
+  <div class="container">
+    <div class="badge">Bolts11 Fleet</div>
+    <h1>Try FleetDispatch — free demo</h1>
+    <p>Tell us who you are and we'll spin up a working tenant for you with sample trucks, drivers, and a job to drag around. You'll get an invite email within a day.</p>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: What you get -->
+      <div>
+        <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">What you'll get</h2>
+
+        <div class="contact-card">
+          <h3>🛻 A live dispatch board</h3>
+          <p>
+            Your own tenant with <strong>3 sample trucks</strong>, <strong>3 sample drivers</strong>,
+            and <strong>1 sample job for today</strong>. Drag trucks into time slots and watch the
+            board do its thing. Nothing to install — it runs in your browser.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>📱 The driver PWA</h3>
+          <p>
+            Sign in as a driver on your phone and see today's runs, clock in/out, and report a
+            broken-down truck. Add to Home Screen and it lives like a native app.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>⏱ How long it takes</h3>
+          <ul style="padding-left: 1.25rem; color: var(--slate-500); font-size: .95rem;">
+            <li><strong>Now:</strong> fill out the form below.</li>
+            <li><strong>Within a day:</strong> we approve your request and email you an invite link.</li>
+            <li><strong>10 minutes after that:</strong> you're signed in and dragging trucks.</li>
+          </ul>
+        </div>
+
+        <div class="contact-card" style="background: var(--navy); border-color: var(--navy);">
+          <h3 style="color: var(--white);">💰 Cost</h3>
+          <p style="color: rgba(255,255,255,.85);">
+            The demo is free. If you like it, pricing typically starts at
+            <strong style="color: var(--amber);">$6/truck/day</strong>. We'll talk pricing after
+            you've actually used it — not before.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Signup form -->
+      <div>
+        <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Request your demo</h2>
+
+        <!-- Success / failure banners (toggled by inline script) -->
+        <div
+          id="signup-success"
+          role="status"
+          style="display:none; background:#f0fdf4; border:1px solid #86efac; border-radius:var(--radius); padding:1.25rem 1.5rem; margin-bottom:1.5rem; color:#166534;"
+        >
+          <strong>Got it!</strong> We'll review your request and email you an invite within a day.
+          Check your spam folder if you don't see anything by tomorrow.
+        </div>
+
+        <div
+          id="signup-error"
+          role="alert"
+          style="display:none; background:#fef2f2; border:1px solid #fca5a5; border-radius:var(--radius); padding:1.25rem 1.5rem; margin-bottom:1.5rem; color:#991b1b;"
+        >
+          <strong>Something went wrong.</strong>
+          <span id="signup-error-detail">Please try again or email us directly.</span>
+        </div>
+
+        <form id="fleet-signup-form" novalidate>
+          <div class="form-group">
+            <label for="name">Your Name <span aria-hidden="true" style="color:var(--amber)">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required maxlength="200" placeholder="Frank Murphy" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span aria-hidden="true" style="color:var(--amber)">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required maxlength="320" placeholder="frank@murphyhauling.com" />
+            <div class="form-note">We'll send your invite link here.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company Name <span aria-hidden="true" style="color:var(--amber)">*</span></label>
+            <input type="text" id="company" name="company" autocomplete="organization" required maxlength="200" placeholder="Murphy Hauling" />
+            <div class="form-note">Becomes the name of your tenant in FleetDispatch.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number <span style="font-weight:400; color:var(--slate-500)">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" maxlength="50" placeholder="+1 (207) 555-0100" />
+            <div class="form-note">In case email bounces or we want to talk through your fleet setup.</div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:0;">
+            <button type="submit" id="signup-submit" class="btn btn-primary" style="width:100%; justify-content:center; font-size:1.05rem; padding:1rem;">
+              Request my demo →
+            </button>
+            <div class="form-note" style="text-align:center; margin-top:.75rem;">
+              No credit card. No spam. We'll email you within a day.
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo">
+          <span class="footer__logo-bolt" aria-hidden="true">⚡</span>
+          Bolts11
+        </a>
+        <p class="footer__tagline">The AI back-office dashboard and PWA for service businesses. Three editions — Lite, Pro, and Fleet — one installable app.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="/#how-it-works">How It Works</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#who-its-for">Who It's For</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
+          <li><a href="mailto:support@bolts11.com">support@bolts11.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2025 Bolts11. All rights reserved.</p>
+      <p>
+        <a href="/privacy-policy/" style="color: rgba(255,255,255,.5);">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="/terms-and-conditions/" style="color: rgba(255,255,255,.5);">Terms &amp; Conditions</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Reuse the mobile-nav handler from main.js. -->
+<script src="../js/main.js"></script>
+
+<!-- Page-specific signup handler — kept inline so main.js stays
+     scoped to behavior shared across all pages. -->
+<script>
+(function () {
+  // FleetDispatch backend URL. CORS on the backend allow-lists
+  // bolts11.com + www.bolts11.com — anything else (file://, a
+  // staging preview domain) will fail the preflight.
+  // If we ever cut to a custom dispatch domain, update this string.
+  var FLEETDISPATCH_BASE = 'https://web-production-5746e.up.railway.app';
+  var SIGNUP_ENDPOINT = FLEETDISPATCH_BASE + '/demo/signup';
+
+  var form    = document.getElementById('fleet-signup-form');
+  var success = document.getElementById('signup-success');
+  var errBox  = document.getElementById('signup-error');
+  var errMsg  = document.getElementById('signup-error-detail');
+  var submit  = document.getElementById('signup-submit');
+  if (!form) return;
+
+  function show(el)  { el.style.display = ''; }
+  function hide(el)  { el.style.display = 'none'; }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    hide(success);
+    hide(errBox);
+
+    var data = {
+      name:    form.name.value.trim(),
+      email:   form.email.value.trim(),
+      company: form.company.value.trim(),
+      phone:   form.phone.value.trim()
+    };
+
+    if (!data.name || !data.email || !data.company) {
+      errMsg.textContent = 'Please fill in name, email, and company.';
+      show(errBox);
+      return;
+    }
+
+    submit.disabled = true;
+    submit.textContent = 'Sending…';
+
+    fetch(SIGNUP_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (r) {
+      if (r.status === 204) {
+        form.reset();
+        show(success);
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      if (r.status === 429) {
+        errMsg.textContent = 'Too many requests right now. Please try again in a minute.';
+        show(errBox);
+        return;
+      }
+      // 400 from validation, 500 from anything else — read the
+      // text body for a useful message when present.
+      return r.text().then(function (body) {
+        errMsg.textContent = (body || 'Please try again or email us directly.').slice(0, 240);
+        show(errBox);
+      });
+    }).catch(function () {
+      // Network / CORS / DNS — generic fallback so we don't leak
+      // implementation details into the UI.
+      errMsg.textContent = 'Could not reach the server. Please try again or email support@bolts11.com.';
+      show(errBox);
+    }).then(function () {
+      submit.disabled = false;
+      submit.textContent = 'Request my demo →';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
