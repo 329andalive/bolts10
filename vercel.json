@@ -2,9 +2,10 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/privacy",  "destination": "/privacy-policy",       "permanent": true },
-    { "source": "/terms",    "destination": "/terms-and-conditions",  "permanent": true },
-    { "source": "/demo",     "destination": "/signup",                "permanent": true }
+    { "source": "/privacy",      "destination": "/privacy-policy",       "permanent": true },
+    { "source": "/terms",        "destination": "/terms-and-conditions",  "permanent": true },
+    { "source": "/demo",         "destination": "/signup",                "permanent": true },
+    { "source": "/fleet-signin", "destination": "https://web-production-5746e.up.railway.app/auth/login", "permanent": false }
   ],
   "headers": [
     {

@@ -19,6 +19,16 @@
   to   = "/signup/"
   status = 301
 
+# /fleet-signin → FleetDispatch's own /auth/login. Bounce
+# (302, not 301) because if we ever cut to a custom domain
+# (dispatch.bolts11.com etc.) we want browsers to re-resolve
+# rather than cache the Railway URL forever.
+[[redirects]]
+  from = "/fleet-signin"
+  to   = "https://web-production-5746e.up.railway.app/auth/login"
+  status = 302
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
